@@ -26,7 +26,7 @@
 </head>
 <body>
   <header>
-    <h1>Our Portfolio</h1>
+    <h1>Our Portfolio for JavaScript</h1>
   </header>
 
   <section id="portfolio">
@@ -35,11 +35,12 @@
   </section>
 
   <script>
-    function PortfolioItem(name, birthday, age, motto, imageURL) {
+    function PortfolioItem(name, birthday, age, motto, hobbies, imageURL) {
       this.name = name;
       this.birthday = birthday;
       this.age = age;
       this.motto = motto;
+      this.hobbies = hobbies;
       this.imageURL = imageURL;
     }
 
@@ -49,18 +50,21 @@
         "July 1",
         "17",
         "Delulu is the solulu"
+        "",
       ),
       new PortfolioItem(
         "Zairelle B. Deleon",
         "",
         "",
         ""
+        "",
       ),
       new PortfolioItem(
-        "Almera Soyosa",
-        "",
-        "",
-        ""
+        "Almera G. Soyosa",
+        "May 11",
+        "17",
+        "bumabangon para lang sa baon",
+        "magcrave sa atensiyon niya, manood, at makinig ng music ni mama taylor",
       ),
     ];
 
@@ -71,6 +75,7 @@
         <p>birthday: ${item.birthday}</p>
         <p>age: ${item.age}</p>
         <p>motto: ${item.motto}</p>
+        <p>hobbies: ${item.hobbies}</p>
         <img src="${item.imageURL}" alt="${item.title}" width="200">
         <hr>
       `;
