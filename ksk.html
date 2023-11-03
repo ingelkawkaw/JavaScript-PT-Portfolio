@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portfolio</title>
+  <style>
+    h1 {
+      color: #3D30A2;
+      text-align: center;
+    }
+    h2{
+      color: #132043;
+      text-align: center;
+    }
+    p{
+        color: #132043;
+    }
+    body {
+      background: linear-gradient(to bottom, #b15eff, #FFA33C);
+      font-family: 'Noto Sans Mono', monospace; 
+    }
+    #projects {
+      color: #3D30A2; 
+      text-align: center; 
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Our Portfolio</h1>
+  </header>
+
+  <section id="portfolio">
+    <h2>Da fifols</h2>
+    <div id="projects"></div>
+  </section>
+
+  <script>
+    function PortfolioItem(name, birthday, age, motto, imageURL) {
+      this.name = name;
+      this.birthday = birthday;
+      this.age = age;
+      this.motto = motto;
+      this.imageURL = imageURL;
+    }
+
+    var portfolio = [
+      new PortfolioItem(
+        "Angel Mae T. Grueso",
+        "July 1",
+        "17",
+        "Delulu is the solulu"
+      ),
+      new PortfolioItem(
+        "Zairelle B. Deleon",
+        "",
+        "",
+        ""
+      ),
+      new PortfolioItem(
+        "Almera Soyosa",
+        "",
+        "",
+        ""
+      ),
+    ];
+
+    function displayPortfolioItem(item) {
+      var projectDiv = document.createElement("div");
+      projectDiv.innerHTML = `
+        <h3>${item.name}</h3>
+        <p>birthday: ${item.birthday}</p>
+        <p>age: ${item.age}</p>
+        <p>motto: ${item.motto}</p>
+        <img src="${item.imageURL}" alt="${item.title}" width="200">
+        <hr>
+      `;
+      document.getElementById("projects").appendChild(projectDiv);
+    }
+
+    for (var i = 0; i < portfolio.length; i++) {
+      displayPortfolioItem(portfolio[i]);
+    }
+  </script>
+</body>
+</html>
